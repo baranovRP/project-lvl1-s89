@@ -11,9 +11,9 @@ A set of mini-games launched from the console. These games are similar to what i
 - [Installation](#installation)
 - [List of games](#list-of-games)
   - [Greeting](#greeting)
-    - [How to play](#how-to-play1)
-  - [Game: "Check for parity"](#check-for-parity)
-    - [How to play](#how-to-play2)
+    - [How to play](#how-to-play)
+  - [Game: "Check for parity"](#game-check-for-parity)
+    - [How to play](#how-to-play)
   
 ### Installation
 1. Install package globally ```npm i -g brain-games-lvl1-s89```.
