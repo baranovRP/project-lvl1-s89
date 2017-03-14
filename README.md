@@ -7,9 +7,33 @@
 
 A set of mini-games launched from the console. These games are similar to what is usually called Brain Games.
 
-## Greeting
-Greets user
+## Table of Contents
+- [Installation](#installation)
+- [List of games](#list-of-games)
+  - [Greeting](#greeting)
+    - [How to play](#how-to-play1)
+  - [Game: "Check for parity"](#check-for-parity)
+    - [How to play](#how-to-play2)
+  
+### Installation
+1. Install package globally ```npm i -g brain-games-lvl1-s89```.
+1. Add folder with bin files to environment variable ```PATH```
 
-## Game: "Check for parity"
+```$ PATH=$PATH:~/<path to node>/lib/node_modules/brain-games-lvl1-s89/dist/bin/```
+
+[![asciicast](https://asciinema.org/a/1tljpb5aisqk5nc5hezzfsm84.png)](https://asciinema.org/a/1tljpb5aisqk5nc5hezzfsm84)
+
+### List of games
+#### Greeting
+Greets user
+##### How to play
+```$ brain-games```
+
+#### Game: "Check for parity"
 The essence of the game is as follows: the user is shown a random number. And he needs to answer **Yes**, if the number is even, or **No** - if odd.
-Any incorrect entry is considered an error, for example, ```n``` and is equivalent to an incorrect answer.
+Any incorrect entry is considered an error, for example, **n** and is equivalent to an incorrect answer.
+
+##### How to play
+```$ brain-even```
+
+[![asciicast](https://asciinema.org/a/b3fznmuk2e29p9dmm4lfv29ee.png)](https://asciinema.org/a/b3fznmuk2e29p9dmm4lfv29ee)
