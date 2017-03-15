@@ -1,5 +1,5 @@
-import { print, getName } from '../lib/utils';
-import { greetMsg, helloMsg } from '../lib/messages';
+import { print, getName } from '../lib/util';
+import { greetMsg, helloMsg } from '../lib/message';
 
 const greeting = () => {
   print(greetMsg());

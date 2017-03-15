@@ -5,8 +5,8 @@ import {
   failureMsg,
   helloMsg,
   questionMsg,
-} from '../lib/messages';
-import * as utils from '../lib/utils';
+} from '../lib/message';
+import * as util from '../lib/util';
 
 const yes = 'yes';
 const no = 'no';
@@ -17,29 +17,29 @@ const isAnswerCorrect = (answer, num) =>
   (isEven(num) ? (answer === yes) : (answer === no));
 
 const evenGame = (attemptTotal) => {
-  utils.print(greetMsg('Answer "yes" if number even otherwise answer "no".\n'));
-  const userName = utils.getName();
-  utils.print(helloMsg(userName));
+  util.print(greetMsg('Answer "yes" if number even otherwise answer "no".\n'));
+  const userName = util.getName();
+  util.print(helloMsg(userName));
 
   const iter = (attemptCount, num) => {
     if (attemptTotal <= attemptCount) {
-      utils.print(congratsMsg(userName));
+      util.print(congratsMsg(userName));
       return;
     }
 
-    utils.print(questionMsg(num));
-    const actualAnswer = utils.getAnswer();
+    util.print(questionMsg(num));
+    const actualAnswer = util.getAnswer();
     const isCorrect = isAnswerCorrect(actualAnswer.toLowerCase(), num);
     const expectedAnswer = isEven(num) ? yes : no;
 
     const message = isCorrect ?
       successMsg() : failureMsg(actualAnswer, expectedAnswer, userName);
 
-    utils.print(message);
-    iter(attemptCount + 1, utils.getRandomInt());
+    util.print(message);
+    iter(attemptCount + 1, util.getRandomInt());
   };
 
-  return iter(0, utils.getRandomInt());
+  return iter(0, util.getRandomInt());
 };
 
 export default evenGame;
