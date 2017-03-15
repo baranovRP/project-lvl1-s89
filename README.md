@@ -12,6 +12,8 @@ A set of mini-games launched from the console. These games are similar to what i
 - [List of games](#list-of-games)
   - [Greeting](#greeting)
   - [Game: "Check for parity"](#game-check-for-parity)
+  - [Game: "Calculator"](#game-calculator)
+  - [Game: "The greatest common divisor (GCD)"](#game-the-greatest-common-divisor)
   
 ### Installation
 1. Install package globally ```npm i -g brain-games-lvl1-s89```.
