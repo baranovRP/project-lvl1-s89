@@ -32,8 +32,8 @@ const evenGame = (attempts) => {
     const isCorrect = isAnswerCorrect(actualAnswer.toLowerCase(), num);
     const expectedAnswer = isEven(num) ? yes : no;
 
-    const message = () => (isCorrect ?
-      successMsg() : failureMsg(actualAnswer, expectedAnswer, userName));
+    const message = isCorrect ?
+      successMsg() : failureMsg(actualAnswer, expectedAnswer, userName);
 
     utils.print(message);
     iter(correctAnswerCount + 1, utils.getRandomInt());
