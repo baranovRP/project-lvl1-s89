@@ -1,5 +1,5 @@
-import greeting from './greeting';
-import brainEvenGame from './evenGame';
+import greeting from './games/greetGame';
+import brainEvenGame from './games/evenGame';
 
 export default greeting;
 

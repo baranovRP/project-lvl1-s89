@@ -4,8 +4,7 @@ export const print = text => console.log(text);
 
 export const getName = () => readlineSync.question('May I have your name? ');
 
-export const sayHello = name => print(`Hello, ${name}!\n`);
+export const getAnswer = () => readlineSync.question('Your answer: ');
 
-const greeting = () => sayHello(getName());
-
-export default greeting;
+export const getRandomInt = (min = 0, max = 100) =>
+  Math.floor(Math.random() * (max - min)) + min;
