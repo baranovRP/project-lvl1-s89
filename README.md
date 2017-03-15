@@ -35,3 +35,9 @@ Any incorrect entry is considered an error, for example, **n** and is equivalent
 ```$ brain-even```
 
 [![asciicast](https://asciinema.org/a/b3fznmuk2e29p9dmm4lfv29ee.png)](https://asciinema.org/a/b3fznmuk2e29p9dmm4lfv29ee)
+
+#### Game: "Calculator"
+The essence of the game is as follows: the user is shown a random mathematical expression, for example 35 + 16, which he/she needs to calculate and write the correct answer.
+
+##### How to play
+```$ brain-calc```
