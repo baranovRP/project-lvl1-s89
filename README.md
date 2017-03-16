@@ -13,7 +13,8 @@ A set of mini-games launched from the console. These games are similar to what i
   - [Greeting](#greeting)
   - [Game: "Check for parity"](#game-check-for-parity)
   - [Game: "Calculator"](#game-calculator)
-  - [Game: "The greatest common divisor (GCD)"](#game-the-greatest-common-divisor)
+  - [Game: "The greatest common divisor (GCD)"](#game-the-greatest-common-divisor-gcd)
+  - [Game: "Balance"](#game-balance)
   
 ### Installation
 1. Install package globally ```npm i -g brain-games-lvl1-s89```.
@@ -49,3 +50,15 @@ The essence of the game is as follows: the user is shown two random numbers, for
 
 ##### How to play
 ```$ brain-gcd```
+
+#### Game: "Balance"
+A balanced number is a number in which the smallest digit differs from the largest one by more than one.
+
+Examples of balanced numbers are 111, 233, 55, 001, 9999, 0001.
+
+And, for example, the number 123 is not balanced because the smallest digit in it is 1, and the largest one is 3, and the difference between them is 2. When balancing the numbers, "large" digits give the excess "smaller" so that the number eventually becomes Balanced. In the case of the number 123, the number 3 should give the number 1, and in the end we get the number 222.
+
+The order of digits in a balanced number is in ascending order. For example, instead of 322 and 232, you need to specify 223.
+
+##### How to play
+```$ brain-balance```
