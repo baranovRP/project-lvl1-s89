@@ -1,6 +1,7 @@
 import { cons, car, cdr } from 'hexlet-pairs';
 
-import { getRandomInt, getRandomSign, getAnswer } from '../lib/util';
+import getAnswer from '../lib/userInteraction';
+import getRandomInt, { getRandomSign } from '../lib/randomData';
 import game from './baseGame';
 
 const firstInt = couple => car(cdr(couple));

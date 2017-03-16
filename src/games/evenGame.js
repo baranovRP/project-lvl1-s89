@@ -1,4 +1,5 @@
-import { getRandomInt, getAnswer } from '../lib/util';
+import getAnswer from '../lib/userInteraction';
+import getRandomInt from '../lib/randomData';
 import game from './baseGame';
 
 const yes = 'yes';

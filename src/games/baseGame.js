@@ -1,6 +1,5 @@
-import greetMsg, { congratsMsg, successMsg, failureMsg,
-  helloMsg, questionMsg } from '../lib/userInteraction';
-import getName from '../lib/util';
+import greetMsg, { congratsMsg, successMsg, failureMsg, helloMsg, questionMsg } from '../lib/message';
+import { getName } from '../lib/userInteraction';
 
 const game = (greetingText, getActualAnswer, getExpectedAnswer,
               generateExercise, generateQuestion, attemptTotal = 3) => {

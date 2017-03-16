@@ -1,4 +1,4 @@
-import getName from '../lib/util';
+import { getName } from '../lib/userInteraction';
 import greetMsg, { helloMsg } from '../lib/message';
 
 const greeting = () => {

@@ -1,14 +1,7 @@
-const greetMsg = (rules = '') => `Welcome to the Brain Games!\n${rules}`;
+import readlineSync from 'readline-sync';
 
-export const congratsMsg = name => `Congratulations, ${name}!`;
+export const getName = () => readlineSync.question('May I have your name? ');
 
-export const successMsg = () => 'Correct!';
+const getAnswer = () => readlineSync.question('Your answer: ');
 
-export const failureMsg = (actualVal, expectedVal, name) =>
-  `'${actualVal}' is wrong answer ;(. Correct answer was '${expectedVal}'.\nLet's try again, ${name}!`;
-
-export const helloMsg = name => `Hello, ${name}!\n`;
-
-export const questionMsg = question => `Question: ${question}`;
-
-export default greetMsg;
+export default getAnswer;
