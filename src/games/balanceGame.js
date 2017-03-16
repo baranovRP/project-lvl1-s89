@@ -1,55 +1,36 @@
-import greetMsg, { congratsMsg, successMsg, failureMsg, helloMsg, questionMsg } from '../lib/message';
-import getName, { getRandomInt, getAnswer } from '../lib/util';
+import { getRandomInt, getAnswer } from '../lib/util';
+import game from '../game';
 
-const balance = (arr, reminder, divider) => {
-  let bal = reminder;
+const balance = (arr, reminder, quotient) => {
+  let currentReminder = reminder;
   const result = arr.reduce((acc) => {
-    if (bal !== 0) {
-      bal -= 1;
-      return [divider + 1, ...acc];
+    if (currentReminder !== 0) {
+      currentReminder -= 1;
+      return [quotient + 1, ...acc];
     }
-    return [divider, ...acc];
+    return [quotient, ...acc];
   }, []);
   return parseInt(result.join(''), 10);
 };
 
-const calcExpression = (quiz) => {
-  const digits = [...String(quiz)];
+const getExpectedAnswer = (num) => {
+  const digits = [...String(num)];
   const sum = digits.reduce((acc, item) => acc + parseInt(item, 10), 0);
   const reminder = sum % digits.length;
-  const divider = parseInt(sum / digits.length, 10);
-  return balance(digits, reminder, divider);
+  const quotient = parseInt(sum / digits.length, 10);
+  return balance(digits, reminder, quotient);
 };
 
-const isAnswerCorrect = (answer, expression) =>
-  (calcExpression(expression) === parseInt(answer, 10));
+const generateExercise = () => getRandomInt(0, 1000);
 
-const puzzle = () => getRandomInt(0, 1000);
+const generateQuestion = msg => msg;
+
+const getActualAnswer = () => parseInt(getAnswer(), 10);
 
 const balanceGame = (attemptTotal = 3) => {
-  console.log(greetMsg('Balance the given number.\n'));
-  const userName = getName();
-  console.log(helloMsg(userName));
-
-  const iter = (attemptCount, quiz) => {
-    if (attemptTotal <= attemptCount) {
-      console.log(congratsMsg(userName));
-      return;
-    }
-
-    console.log(questionMsg(quiz));
-    const actualAnswer = getAnswer();
-    const expectedAnswer = calcExpression(quiz);
-    const isCorrect = isAnswerCorrect(actualAnswer, quiz);
-
-    const message = isCorrect ?
-      successMsg() : failureMsg(actualAnswer, expectedAnswer, userName);
-
-    console.log(message);
-    iter(attemptCount + 1, puzzle());
-  };
-
-  return iter(0, puzzle());
+  const gameRules = 'Balance the given number.\n';
+  return game(gameRules, getActualAnswer, getExpectedAnswer,
+    generateExercise, generateQuestion, attemptTotal);
 };
 
 export default balanceGame;
