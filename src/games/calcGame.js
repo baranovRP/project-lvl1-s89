@@ -20,7 +20,7 @@ const calcExpression = (quiz) => {
       result = firstInt(quiz) * secondInt(quiz);
       break;
     default:
-      util.print(`Argument ${sign(quiz)} doesn't match with any sign`);
+      console.log(`Argument ${sign(quiz)} doesn't match with any sign`);
   }
   return result;
 };
@@ -38,17 +38,17 @@ const puzzle = () => {
 const quizMsg = quiz => `${firstInt(quiz)} ${sign(quiz)} ${secondInt(quiz)}`;
 
 const calcGame = (attemptTotal = 3) => {
-  util.print(msg.greetMsg('What is the result of the expression?\n'));
+  console.log(msg.greetMsg('What is the result of the expression?\n'));
   const userName = util.getName();
-  util.print(msg.helloMsg(userName));
+  console.log(msg.helloMsg(userName));
 
   const iter = (attemptCount, quiz) => {
     if (attemptTotal <= attemptCount) {
-      util.print(msg.congratsMsg(userName));
+      console.log(msg.congratsMsg(userName));
       return;
     }
 
-    util.print(msg.questionMsg(quizMsg(quiz)));
+    console.log(msg.questionMsg(quizMsg(quiz)));
     const actualAnswer = util.getAnswer();
     const expectedAnswer = calcExpression(quiz);
     const isCorrect = isAnswerCorrect(actualAnswer, quiz);
@@ -56,7 +56,7 @@ const calcGame = (attemptTotal = 3) => {
     const message = isCorrect ?
       msg.successMsg() : msg.failureMsg(actualAnswer, expectedAnswer, userName);
 
-    util.print(message);
+    console.log(message);
     iter(attemptCount + 1, puzzle());
   };
 

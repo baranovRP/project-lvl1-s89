@@ -11,17 +11,17 @@ const isAnswerCorrect = (answer, num) => isEven(num) === answer;
 const puzzle = () => util.getRandomInt();
 
 const evenGame = (attemptTotal = 3) => {
-  util.print(msg.greetMsg('Answer "yes" if number even otherwise answer "no".\n'));
+  console.log(msg.greetMsg('Answer "yes" if number even otherwise answer "no".\n'));
   const userName = util.getName();
-  util.print(msg.helloMsg(userName));
+  console.log(msg.helloMsg(userName));
 
   const iter = (attemptCount, quiz) => {
     if (attemptTotal <= attemptCount) {
-      util.print(msg.congratsMsg(userName));
+      console.log(msg.congratsMsg(userName));
       return;
     }
 
-    util.print(msg.questionMsg(quiz));
+    console.log(msg.questionMsg(quiz));
     const actualAnswer = util.getAnswer();
     const expectedAnswer = isEven(quiz);
     const isCorrect = isAnswerCorrect(actualAnswer.toLowerCase(), quiz);
@@ -29,7 +29,7 @@ const evenGame = (attemptTotal = 3) => {
     const message = isCorrect ?
       msg.successMsg() : msg.failureMsg(actualAnswer, expectedAnswer, userName);
 
-    util.print(message);
+    console.log(message);
     iter(attemptCount + 1, puzzle());
   };
 

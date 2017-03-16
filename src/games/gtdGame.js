@@ -24,17 +24,17 @@ const puzzle = () => {
 const quizMsg = quiz => `${firstInt(quiz)} ${secondInt(quiz)}`;
 
 const gtdGame = (attemptTotal = 3) => {
-  util.print(msg.greetMsg('Find the greatest common divisor of given numbers.\n'));
+  console.log(msg.greetMsg('Find the greatest common divisor of given numbers.\n'));
   const userName = util.getName();
-  util.print(msg.helloMsg(userName));
+  console.log(msg.helloMsg(userName));
 
   const iter = (attemptCount, quiz) => {
     if (attemptTotal <= attemptCount) {
-      util.print(msg.congratsMsg(userName));
+      console.log(msg.congratsMsg(userName));
       return;
     }
 
-    util.print(msg.questionMsg(quizMsg(quiz)));
+    console.log(msg.questionMsg(quizMsg(quiz)));
     const actualAnswer = util.getAnswer();
     const expectedAnswer = findGtd(quiz);
     const isCorrect = isAnswerCorrect(actualAnswer, quiz);
@@ -42,7 +42,7 @@ const gtdGame = (attemptTotal = 3) => {
     const message = isCorrect ?
       msg.successMsg() : msg.failureMsg(actualAnswer, expectedAnswer, userName);
 
-    util.print(message);
+    console.log(message);
     iter(attemptCount + 1, puzzle());
   };
 
