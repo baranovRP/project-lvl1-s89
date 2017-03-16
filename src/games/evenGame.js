@@ -1,5 +1,5 @@
 import { getRandomInt, getAnswer } from '../lib/util';
-import game from '../game';
+import game from './baseGame';
 
 const yes = 'yes';
 const no = 'no';
