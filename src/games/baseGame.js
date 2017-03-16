@@ -7,9 +7,11 @@ const game = (greetingText, getActualAnswer, getExpectedAnswer,
   const userName = getName();
   console.log(helloMsg(userName));
 
-  const iter = (attemptCount, exercise) => {
+  const iter = (attemptCount, exercise, correctAnswerCount) => {
     if (attemptTotal <= attemptCount) {
-      console.log(congratsMsg(userName));
+      if (correctAnswerCount === 3) {
+        console.log(congratsMsg(userName));
+      }
       return;
     }
 
@@ -17,14 +19,16 @@ const game = (greetingText, getActualAnswer, getExpectedAnswer,
     const actualAnswer = getActualAnswer();
     const expectedAnswer = getExpectedAnswer(exercise);
 
-    const message = expectedAnswer === actualAnswer ?
+    const isAnswerCorrect = expectedAnswer === actualAnswer;
+    const message = isAnswerCorrect ?
       successMsg() : failureMsg(actualAnswer, expectedAnswer, userName);
 
     console.log(message);
-    iter(attemptCount + 1, generateExercise());
+    iter(attemptCount + 1, generateExercise(),
+      isAnswerCorrect ? correctAnswerCount + 1 : correctAnswerCount);
   };
 
-  return iter(0, generateExercise());
+  return iter(0, generateExercise(), 0);
 };
 
 export default game;
