@@ -2,5 +2,4 @@
 
 import { calcGame } from '../';
 
-const attempts = 3;
-calcGame(attempts);
+calcGame();

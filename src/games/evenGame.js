@@ -10,7 +10,7 @@ const isAnswerCorrect = (answer, num) => isEven(num) === answer;
 
 const puzzle = () => util.getRandomInt();
 
-const evenGame = (attemptTotal) => {
+const evenGame = (attemptTotal = 3) => {
   util.print(msg.greetMsg('Answer "yes" if number even otherwise answer "no".\n'));
   const userName = util.getName();
   util.print(msg.helloMsg(userName));

@@ -23,7 +23,7 @@ const puzzle = () => {
 
 const quizMsg = quiz => `${firstInt(quiz)} ${secondInt(quiz)}`;
 
-const gtdGame = (attemptTotal) => {
+const gtdGame = (attemptTotal = 3) => {
   util.print(msg.greetMsg('Find the greatest common divisor of given numbers.\n'));
   const userName = util.getName();
   util.print(msg.helloMsg(userName));

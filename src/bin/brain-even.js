@@ -2,5 +2,4 @@
 
 import { evenGame } from '../';
 
-const attempts = 3;
-evenGame(attempts);
+evenGame();

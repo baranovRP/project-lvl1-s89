@@ -37,7 +37,7 @@ const puzzle = () => {
 
 const quizMsg = quiz => `${firstInt(quiz)} ${sign(quiz)} ${secondInt(quiz)}`;
 
-const calcGame = (attemptTotal) => {
+const calcGame = (attemptTotal = 3) => {
   util.print(msg.greetMsg('What is the result of the expression?\n'));
   const userName = util.getName();
   util.print(msg.helloMsg(userName));

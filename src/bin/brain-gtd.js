@@ -2,5 +2,4 @@
 
 import { gtdGame } from '../';
 
-const attempts = 3;
-gtdGame(attempts);
+gtdGame();
