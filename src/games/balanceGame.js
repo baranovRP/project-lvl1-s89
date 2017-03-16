@@ -27,10 +27,10 @@ const generateQuestion = msg => msg;
 
 const getActualAnswer = () => parseInt(getAnswer(), 10);
 
-const balanceGame = (attemptTotal = 3) => {
+const balanceGame = () => {
   const gameRules = 'Balance the given number.\n';
   return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion, attemptTotal);
+    generateExercise, generateQuestion);
 };
 
 export default balanceGame;

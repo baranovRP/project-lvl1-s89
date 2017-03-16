@@ -12,10 +12,10 @@ const generateQuestion = msg => msg;
 
 const getActualAnswer = () => getAnswer().toLowerCase();
 
-const evenGame = (attemptTotal = 3) => {
+const evenGame = () => {
   const gameRules = 'Answer "yes" if number even otherwise answer "no".\n';
   return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion, attemptTotal);
+    generateExercise, generateQuestion);
 };
 
 export default evenGame;

@@ -22,10 +22,10 @@ const generateQuestion = pair => `${firstInt(pair)} ${secondInt(pair)}`;
 
 const getActualAnswer = () => parseInt(getAnswer(), 10);
 
-const gtdGame = (attemptTotal = 3) => {
+const gtdGame = () => {
   const gameRules = 'Find the greatest common divisor of given numbers.\n';
   return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion, attemptTotal);
+    generateExercise, generateQuestion);
 };
 
 export default gtdGame;

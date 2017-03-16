@@ -36,10 +36,10 @@ const generateQuestion = quiz => `${firstInt(quiz)} ${sign(quiz)} ${secondInt(qu
 
 const getActualAnswer = () => parseInt(getAnswer(), 10);
 
-const calcGame = (attemptTotal = 3) => {
+const calcGame = () => {
   const gameRules = 'What is the result of the expression?\n';
   return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion, attemptTotal);
+    generateExercise, generateQuestion);
 };
 
 export default calcGame;
