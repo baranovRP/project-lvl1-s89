@@ -1,4 +1,4 @@
-export const greetMsg = (rules = '') => `Welcome to the Brain Games!\n${rules}`;
+const greetMsg = (rules = '') => `Welcome to the Brain Games!\n${rules}`;
 
 export const congratsMsg = name => `Congratulations, ${name}!`;
 
@@ -10,3 +10,5 @@ export const failureMsg = (actualVal, expectedVal, name) =>
 export const helloMsg = name => `Hello, ${name}!\n`;
 
 export const questionMsg = question => `Question: ${question}`;
+
+export default greetMsg;

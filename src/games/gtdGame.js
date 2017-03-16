@@ -1,10 +1,10 @@
-import * as pair from 'hexlet-pairs';
+import { cons, car, cdr } from 'hexlet-pairs';
 
-import * as msg from '../lib/message';
-import * as util from '../lib/util';
+import greetMsg, { congratsMsg, successMsg, failureMsg, helloMsg, questionMsg } from '../lib/message';
+import getName, { getRandomInt, getAnswer } from '../lib/util';
 
-const firstInt = couple => pair.car(couple);
-const secondInt = couple => pair.cdr(couple);
+const firstInt = couple => car(couple);
+const secondInt = couple => cdr(couple);
 
 const findGtd = (quiz) => {
   const iter = (first, second) =>
@@ -16,31 +16,31 @@ const isAnswerCorrect = (answer, expression) =>
   (findGtd(expression) === parseInt(answer, 10));
 
 const puzzle = () => {
-  const first = util.getRandomInt();
-  const second = util.getRandomInt();
-  return pair.cons(first, second);
+  const first = getRandomInt();
+  const second = getRandomInt();
+  return cons(first, second);
 };
 
 const quizMsg = quiz => `${firstInt(quiz)} ${secondInt(quiz)}`;
 
 const gtdGame = (attemptTotal = 3) => {
-  console.log(msg.greetMsg('Find the greatest common divisor of given numbers.\n'));
-  const userName = util.getName();
-  console.log(msg.helloMsg(userName));
+  console.log(greetMsg('Find the greatest common divisor of given numbers.\n'));
+  const userName = getName();
+  console.log(helloMsg(userName));
 
   const iter = (attemptCount, quiz) => {
     if (attemptTotal <= attemptCount) {
-      console.log(msg.congratsMsg(userName));
+      console.log(congratsMsg(userName));
       return;
     }
 
-    console.log(msg.questionMsg(quizMsg(quiz)));
-    const actualAnswer = util.getAnswer();
+    console.log(questionMsg(quizMsg(quiz)));
+    const actualAnswer = getAnswer();
     const expectedAnswer = findGtd(quiz);
     const isCorrect = isAnswerCorrect(actualAnswer, quiz);
 
     const message = isCorrect ?
-      msg.successMsg() : msg.failureMsg(actualAnswer, expectedAnswer, userName);
+      successMsg() : failureMsg(actualAnswer, expectedAnswer, userName);
 
     console.log(message);
     iter(attemptCount + 1, puzzle());

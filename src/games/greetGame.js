@@ -1,5 +1,5 @@
-import { getName } from '../lib/util';
-import { greetMsg, helloMsg } from '../lib/message';
+import getName from '../lib/util';
+import greetMsg, { helloMsg } from '../lib/message';
 
 const greeting = () => {
   console.log(greetMsg());

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-export const getName = () => readlineSync.question('May I have your name? ');
+const getName = () => readlineSync.question('May I have your name? ');
 
 export const getAnswer = () => readlineSync.question('Your answer: ');
 
@@ -11,3 +11,5 @@ export const getRandomSign = () => {
   const signs = ['+', '-', '*'];
   return signs[getRandomInt(0, 2)];
 };
+
+export default getName;
