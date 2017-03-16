@@ -3,13 +3,13 @@ import { cons, car, cdr } from 'hexlet-pairs';
 import { getRandomInt, getAnswer } from '../lib/util';
 import game from '../game';
 
-const firstInt = couple => car(couple);
-const secondInt = couple => cdr(couple);
+const firstInt = pair => car(pair);
+const secondInt = pair => cdr(pair);
 
-const getExpectedAnswer = (quiz) => {
+const getExpectedAnswer = (pair) => {
   const iter = (first, second) =>
     ((second === 0) ? Math.abs(first) : iter(second, first % second));
-  return iter(firstInt(quiz), secondInt(quiz));
+  return iter(firstInt(pair), secondInt(pair));
 };
 
 const generateExercise = () => {
@@ -18,7 +18,7 @@ const generateExercise = () => {
   return cons(first, second);
 };
 
-const generateQuestion = quiz => `${firstInt(quiz)} ${secondInt(quiz)}`;
+const generateQuestion = pair => `${firstInt(pair)} ${secondInt(pair)}`;
 
 const getActualAnswer = () => parseInt(getAnswer(), 10);
 
