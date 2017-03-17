@@ -1,8 +1,9 @@
+import readlineSync from 'readline-sync';
 import { cons, car, cdr } from 'hexlet-pairs';
 
-import getAnswer from '../lib/userInteraction';
 import getRandomInt, { getRandomSign } from '../lib/randomData';
-import game from './baseGame';
+import game from '../baseGame';
+import greeting from '../greeting';
 
 const firstInt = couple => car(cdr(couple));
 const secondInt = couple => cdr(cdr(couple));
@@ -23,7 +24,7 @@ const getExpectedAnswer = (expression) => {
     default:
       console.log(`Argument ${sign(expression)} doesn't match with any sign`);
   }
-  return result;
+  return String(result);
 };
 
 const generateExercise = () => {
@@ -35,12 +36,11 @@ const generateExercise = () => {
 
 const generateQuestion = quiz => `${firstInt(quiz)} ${sign(quiz)} ${secondInt(quiz)}`;
 
-const getActualAnswer = () => parseInt(getAnswer(), 10);
+const getActualAnswer = () => readlineSync.question('Your answer: ');
 
-const calcGame = () => {
-  const gameRules = 'What is the result of the expression?\n';
-  return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion);
-};
+const getUserName = () => greeting('What is the result of the expression?\n');
+
+const calcGame = () => game(getUserName, getActualAnswer, getExpectedAnswer,
+  generateExercise, generateQuestion);
 
 export default calcGame;

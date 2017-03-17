@@ -1,6 +1,8 @@
-import getAnswer from '../lib/userInteraction';
+import readlineSync from 'readline-sync';
+
 import getRandomInt from '../lib/randomData';
-import game from './baseGame';
+import game from '../baseGame';
+import greeting from '../greeting';
 
 const yes = 'yes';
 const no = 'no';
@@ -11,12 +13,11 @@ const generateExercise = () => getRandomInt();
 
 const generateQuestion = msg => msg;
 
-const getActualAnswer = () => getAnswer().toLowerCase();
+const getActualAnswer = () => readlineSync.question('Your answer: ').toLowerCase();
 
-const evenGame = () => {
-  const gameRules = 'Answer "yes" if number even otherwise answer "no".\n';
-  return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion);
-};
+const getUserName = () => greeting('Answer "yes" if number even otherwise answer "no".\n');
+
+const evenGame = () => game(getUserName, getActualAnswer, getExpectedAnswer,
+  generateExercise, generateQuestion);
 
 export default evenGame;
