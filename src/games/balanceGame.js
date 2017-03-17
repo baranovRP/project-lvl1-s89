@@ -1,4 +1,4 @@
-import getAnswer from '../lib/userInteraction';
+import readlineSync from 'readline-sync';
 import getRandomInt from '../lib/randomData';
 import game from './baseGame';
 
@@ -26,12 +26,14 @@ const generateExercise = () => getRandomInt(0, 1000);
 
 const generateQuestion = msg => msg;
 
-const getActualAnswer = () => parseInt(getAnswer(), 10);
-
-const balanceGame = () => {
-  const gameRules = 'Balance the given number.\n';
-  return game(gameRules, getActualAnswer, getExpectedAnswer,
-    generateExercise, generateQuestion);
+const getActualAnswer = () => {
+  const rawAnswer = readlineSync.question('Your answer: ');
+  return parseInt(rawAnswer, 10);
 };
+
+const gameRules = 'Balance the given number.\n';
+
+const balanceGame = () => game(gameRules, getActualAnswer, getExpectedAnswer,
+  generateExercise, generateQuestion);
 
 export default balanceGame;
