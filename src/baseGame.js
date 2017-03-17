@@ -1,10 +1,8 @@
-import greetMsg, { congratsMsg, successMsg, failureMsg, questionMsg } from './lib/message';
-import greetUser from './greeting';
+import { congratsMsg, successMsg, failureMsg, questionMsg } from './lib/message';
 
-const game = (greetingText, getActualAnswer, getExpectedAnswer,
+const game = (getUserName, getActualAnswer, getExpectedAnswer,
               generateExercise, generateQuestion, attemptTotal = 3) => {
-  console.log(greetMsg(greetingText));
-  const userName = greetUser();
+  const userName = getUserName();
 
   const iter = (attemptCount, exercise, correctAnswerCount) => {
     if (attemptTotal <= attemptCount) {
