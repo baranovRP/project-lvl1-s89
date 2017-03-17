@@ -1,6 +1,7 @@
 import readlineSync from 'readline-sync';
+
 import getRandomInt from '../lib/randomData';
-import game from './baseGame';
+import game from '../baseGame';
 
 const balance = (arr, reminder, quotient) => {
   let currentReminder = reminder;
