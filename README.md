@@ -15,6 +15,8 @@ A set of mini-games launched from the console. These games are similar to what i
   - [Game: "Calculator"](#game-calculator)
   - [Game: "The greatest common divisor (GCD)"](#game-the-greatest-common-divisor-gcd)
   - [Game: "Balance"](#game-balance)
+  - [Game: "Arithmetic progression"](#game-arithmetic-progression)
+  - [Game: "Is it a prime number?"](#game-is-it-a-prime-number)
   
 ### Installation
 1. Install package globally ```npm i -g brain-games-lvl1-s89```.
@@ -62,3 +64,17 @@ The order of digits in a balanced number is in ascending order. For example, ins
 
 ##### How to play
 ```$ brain-balance```
+
+#### Game: "Arithmetic progression"
+The player must determine the lost number.
+```5 7 9 11 13 .. 17 19 21 23```
+Answer is ```15```
+
+##### How to play
+```$ brain-progression```
+
+#### Game: "Is it a prime number?"
+Is it a prime number?
+
+##### How to play
+```$ brain-prime```
