@@ -30,7 +30,7 @@ const generateExercise = () => {
   return cons(`Question: ${num}`, answer);
 };
 
-const rule = 'Balance the given number.\n';
+const rule = 'Balance the given number.';
 
 const balanceGame = () => game(rule, generateExercise);
 

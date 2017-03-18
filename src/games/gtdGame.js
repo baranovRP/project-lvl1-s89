@@ -21,7 +21,7 @@ const generateExercise = () => {
   return cons(generateQuestion(pair), answer);
 };
 
-const rule = 'Find the greatest common divisor of given numbers.\n';
+const rule = 'Find the greatest common divisor of given numbers.';
 
 const gtdGame = () => game(rule, generateExercise);
 

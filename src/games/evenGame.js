@@ -15,7 +15,7 @@ const generateExercise = () => {
   return cons(`Question: ${query}`, answer);
 };
 
-const rule = 'Answer "yes" if number even otherwise answer "no".\n';
+const rule = 'Answer "yes" if number even otherwise answer "no".';
 
 const evenGame = () => game(rule, generateExercise);
 

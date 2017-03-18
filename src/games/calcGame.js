@@ -36,7 +36,7 @@ const generateExercise = () => {
   return cons(generateQuestion(expression), answer);
 };
 
-const rule = 'What is the result of the expression?\n';
+const rule = 'What is the result of the expression?';
 
 const calcGame = () => game(rule, generateExercise);
 
