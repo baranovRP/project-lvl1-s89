@@ -1,11 +1,9 @@
 import readlineSync from 'readline-sync';
 
-import greetMsg, { helloMsg } from './lib/message';
-
 const greeting = (ruleText = '') => {
-  console.log(`${greetMsg()}${ruleText}`);
+  console.log(`Welcome to the Brain Games!\n${ruleText}`);
   const name = readlineSync.question('May I have your name? ');
-  console.log(helloMsg(name));
+  console.log(`Hello, ${name}!\n`);
 
   return name;
 };

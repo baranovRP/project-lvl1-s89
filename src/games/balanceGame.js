@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
+import { cons } from 'hexlet-pairs';
 
 import getRandomInt from '../lib/randomData';
 import game from '../baseGame';
-import greeting from '../greeting';
 
 const balance = (arr, reminder, quotient) => {
   let currentReminder = reminder;
@@ -18,21 +17,21 @@ const balance = (arr, reminder, quotient) => {
 
 const getExpectedAnswer = (num) => {
   const digits = [...String(num)];
-  const sum = digits.reduce((acc, item) => acc + parseInt(item, 10), 0);
+  const sum = digits.reduce((acc, item) =>
+    acc + parseInt(item, 10), 0);
   const reminder = sum % digits.length;
   const quotient = parseInt(sum / digits.length, 10);
   return String(balance(digits, reminder, quotient));
 };
 
-const generateExercise = () => getRandomInt(0, 1000);
+const generateExercise = () => {
+  const num = getRandomInt(0, 1000);
+  const answer = getExpectedAnswer(num);
+  return cons(`Question: ${num}`, answer);
+};
 
-const generateQuestion = msg => msg;
+const rule = 'Balance the given number.\n';
 
-const getActualAnswer = () => readlineSync.question('Your answer: ');
-
-const getUserName = () => greeting('Balance the given number.\n');
-
-const balanceGame = () => game(getUserName, getActualAnswer, getExpectedAnswer,
-  generateExercise, generateQuestion);
+const balanceGame = () => game(rule, generateExercise);
 
 export default balanceGame;

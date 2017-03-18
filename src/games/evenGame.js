@@ -1,23 +1,22 @@
-import readlineSync from 'readline-sync';
+import { cons } from 'hexlet-pairs';
 
 import getRandomInt from '../lib/randomData';
 import game from '../baseGame';
-import greeting from '../greeting';
 
 const yes = 'yes';
 const no = 'no';
 
-const getExpectedAnswer = num => (!(num % 2) ? yes : no);
+const getExpectedAnswer = num =>
+  (!(num % 2) ? yes : no);
 
-const generateExercise = () => getRandomInt();
+const generateExercise = () => {
+  const query = getRandomInt();
+  const answer = getExpectedAnswer(query);
+  return cons(`Question: ${query}`, answer);
+};
 
-const generateQuestion = msg => msg;
+const rule = 'Answer "yes" if number even otherwise answer "no".\n';
 
-const getActualAnswer = () => readlineSync.question('Your answer: ').toLowerCase();
-
-const getUserName = () => greeting('Answer "yes" if number even otherwise answer "no".\n');
-
-const evenGame = () => game(getUserName, getActualAnswer, getExpectedAnswer,
-  generateExercise, generateQuestion);
+const evenGame = () => game(rule, generateExercise);
 
 export default evenGame;
