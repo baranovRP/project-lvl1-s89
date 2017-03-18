@@ -1,6 +1,6 @@
 {
   "name": "brain-games-lvl1-s89",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "a pack of mini games",
   "main": "index.js",
   "bin": {
